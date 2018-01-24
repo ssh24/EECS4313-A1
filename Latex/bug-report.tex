@@ -78,17 +78,17 @@
 \section{Feature Enhancement Report}
 
 \begin{itemize}
-\item \textbf{Bug Report Title}:
-\item \textbf{Reported by}:
-\item \textbf{Date reported}:
-\item \textbf{Program (or component) name}:
-\item \textbf{Configuration(s)}:
-\item \textbf{Report type}:
-\item \textbf{Reproducibility}:
-\item \textbf{Severity}:
-\item \textbf{Problem summary}:
-\item \textbf{Problem description}:
-\item \textbf{New or old bug}:
+\item \textbf{Bug Report Title}: Undoing bulk delete appointments does not undo the entire action
+\item \textbf{Reported by}: Robin Bandzar
+\item \textbf{Date reported}: January 24 2018 10:55AM
+\item \textbf{Program (or component) name}: BORG Calendar
+\item \textbf{Configuration(s)}: Default installation for v1.8.3 on Windows 10
+\item \textbf{Report type}: Feature Enhancement
+\item \textbf{Reproducibility}: 100\%
+\item \textbf{Severity}: Low
+\item \textbf{Problem summary}: After the act of selecting and deleting multiple appointments for a single day through the appointments tab. When one tries to undo the deletion action the program only undos the deletion of a single appointment. Multiple undos are needed to restore the appointments from that single action.
+\item \textbf{Problem description}: Reproduction of enhancement can be done by either selecting a day with multiple appointments or creating multiple appointments on a single day. Double-clicking on any of those appointments to get to the appointments tab and shift clicking to select multiple appointments listed on the righthand column. Once multiple appointments are selected for deletion, click on the Delete button and the program will prompt you with a notification asking whether you would like to delete selected appointments(s). Select Ok and move back into any calendar view which includes the day from which the appointments were deleted. In the program main toolbar there is an option to undo your most recent action. When you click on it, the program only undos one of the bulk deleted appointments. If you were to delete 5 appointments at once then you would need to select undo 5 times to restore the calendar to it's previous state.
+\item \textbf{New or old bug}: New
 \end{itemize}
 
 \end{document}
