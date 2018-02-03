@@ -1,0 +1,25 @@
+{
+  "name": "eecs4313-a1",
+  "version": "1.0.0",
+  "description": "Assignment-1 for EECS 4313. Bug and Bug Reports.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssh24/EECS4313-A1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssh24/EECS4313-A1/issues"
+  },
+  "homepage": "https://github.com/ssh24/EECS4313-A1#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "graceful-fs": "^4.1.11",
+    "xml2json": "^0.11.0",
+    "yargs": "^10.1.1"
+  }
+}

@@ -17,10 +17,11 @@
 
 
 %%%%%%%%%%%%Enter your names here%%%%%%%%
-\author{\textbf{Edward Vaisman}
-\and \textbf{Robin Bandzar}
-\and \textbf{Kirusanth Thiruchelvam}
-\and \textbf{Sadman Sakib Hasan}
+\author{Student Name | Student Number | EECS Account
+\and \textbf{Edward Vaisman | 212849857 | eddyv}
+\and \textbf{Robin Bandzar | 212200531 | cse23028}
+\and \textbf{Kirusanth Thiruchelvam | 212918298 | kirusant}
+\and \textbf{Sadman Sakib Hasan | 212497509 | cse23152}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -46,51 +47,150 @@
 \subsection{First Bug Report}
 
 \begin{itemize}
-\item \textbf{Bug Report Title}:
-\item \textbf{Reported by}:
-\item \textbf{Date reported}:
-\item \textbf{Program (or component) name}:
+\item \textbf{Bug Report Title}: Undo does not support multiple paste operations
+\item \textbf{Reported by}: Kirusanth Thiruchelvam
+\item \textbf{Date reported}: January 23, 2018
+\item \textbf{Program (or component) name}: Undo button
 \item \textbf{Configuration(s)}:
-\item \textbf{Report type}:
-\item \textbf{Reproducibility}:
-\item \textbf{Severity}:
-\item \textbf{Problem summary}:
-\item \textbf{Problem description}:
-\item \textbf{New or old bug}:
+\begin{itemize}
+\item Operating System: Windows 10 Pro 
+\item Version: 10.0.1.16299 Build 16299
+\item System Manufacturer: SAMSUNG ELECTRONICS CO., LTD.
+\item System Model: QX310/QX410/QX510/SF310/SF410/SF510
+\item BIOS: AMIBIOS Version 03MX.M005.20101011.SCY 
+\item Processor: Intel(R) Core(TM) i5 CPU   M 460   @ 2.53 GHZ (4CPUs), ~ 2.5GHz
+\item Memory: 8192 MB RAM
+\item Display Device: Intel(R) HD Graphics (Core i5)
+\item BORG Calendar Version: 1.8.3
+\item Java Version: 1.8.0\_161
+\end{itemize}
+\item \textbf{Report type}: Coding Error
+\item \textbf{Reproducibility}: 100\%
+\item \textbf{Severity}: Low
+\item \textbf{Problem summary}: After creating a new appointment, copying it once, and pasting it X (an arbitary number) times, only the last pasted appointment and the orginal appointment are removed after pressing undo button X+1 times. 
+\item \textbf{Problem description}:\newline
+\underline{Steps to Reproduce}
+\begin{enumerate}
+\item Run the application
+ \item Create a new appointment
+ \item Right click the created appointment and hit copy 
+ \item Paste it 5 times
+ \item Click the undo button located at the top of panel for 6 times
+\end {enumerate}
+ \underline{ Results}
+
+\item Expected Results: After clicking the undo button 6 times, it  removes all five copies and the orginal appointment.
+\item Real Results: After clicking the undo button 6 times, only the last paste operation and the orginal appointment are being removed by the application.
+\item \textbf{New or old bug}: New
 \end{itemize}
 
 \newpage
 \subsection{Second Bug Report}
 
 \begin{itemize}
-\item \textbf{Bug Report Title}:
-\item \textbf{Reported by}:
-\item \textbf{Date reported}:
-\item \textbf{Program (or component) name}:
-\item \textbf{Configuration(s)}:
-\item \textbf{Report type}:
-\item \textbf{Reproducibility}:
-\item \textbf{Severity}:
-\item \textbf{Problem summary}:
-\item \textbf{Problem description}:
-\item \textbf{New or old bug}:
+\item \textbf{Bug Report Title}: Socket port values below -1 or above 65535 causes application to not be runnable after restart.
+\item \textbf{Reported by}: Edward Vaisman
+\item \textbf{Date reported}: January, 22nd, 2018
+\item \textbf{Program (or component) name}: BORG Calendar version 1.8.3
+\item \textbf{Configuration(s)}:\\
+\underline{System Info}
+\begin{itemize}
+\item{Operating System: Windows 10 Home 64-bit (10.0, Build 16299) (16299.rs3\_release.170928-1534)}
+\item {Language: English (Regional Setting: English)}
+\item {System Manufacturer: Dell Inc.}
+\item {System Model: Inspiron 7559}
+\item {Display Device: Intel(R) HD Graphics 530}
+\item {Processor: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz (8 CPUs), ~2.6GHz }
+\item {Memory: 8192MB RAM}
+\item {BORG Calendar Version: 1.8.3}
+\item {Java Version: 1.8.0\_161}
+\end{itemize}
+\underline{BORG Settings}
+\begin{itemize}
+\item{Socket Port: -2929}
+\end{itemize}
+\item \textbf{Report type}: Coding Error.
+\item \textbf{Reproducibility}: 100\% (Tested on 4 seperate machines.)
+\item \textbf{Severity}: High (Fatal)
+\item \textbf{Problem summary}: After changing the socket port to -2929 and restarting the application causes BORG to be unusable even after a clean install.
+\item \textbf{Problem description}:\\
+\underline{Steps to Reproduce}
+\begin{enumerate}
+\item{Run the application}
+\item{Select ``Options'' $\to$ ``Edit Preferences''.}
+\item{The ``Options'' window appears. Select the ``Miscellaneous'' Tab.}
+\item{Change Socket Port from 2929 to -2929 and press apply.}
+\item{Restart BORG.}
+\end{enumerate}
+\underline{Results}
+\begin{itemize}
+\item{Expected Results: Error message prompting the use of a valid socket port.}
+\item{Real Results: Unable to run the application and thus not able to access calendar data.}
+\begin{enumerate}
+\item{Unable to run BORG after application restart}
+\item{Unable to run BORG after clean uninstall and re-install}
+\item{Unable to run BORG off a USB}
+\item{Unable to run BORG after system restart}
+\item{Unable to run BORG after java re-install}
+\end{enumerate}
+\end{itemize}
+\underline{Additional Tests}\\
+{Goals: To verify if the error only occurs with negative numbers/any port that is not 2929 or exactly with port -2929 or an error that occurs when attempting to change the port at all.}
+\begin{enumerate}
+\item{Attempt to reproduce with port 20. No errors.}
+\item{Attempt to reproduce with port 1. No errors.}
+\item{Attempt to reproduce with port -1. No errors.}
+\item{Attempt to reproduce with port -20. Bug occured.}
+\item{Attempt to reproduce by changing the port to -2929, applying the changes, and then setting it back to 2929 and applying changes. Bug occured.}
+\item{Attempt to reproduce with port 65536. Bug occured.}
+\end{enumerate}
+\item \textbf{New or old bug}: New
 \end{itemize}
 
 \newpage
 \subsection{Feature Enhancement Report}
 
 \begin{itemize}
-\item \textbf{Bug Report Title}:
-\item \textbf{Reported by}:
-\item \textbf{Date reported}:
-\item \textbf{Program (or component) name}:
-\item \textbf{Configuration(s)}:
-\item \textbf{Report type}:
-\item \textbf{Reproducibility}:
-\item \textbf{Severity}:
-\item \textbf{Problem summary}:
-\item \textbf{Problem description}:
-\item \textbf{New or old bug}:
+\item \textbf{Bug Report Title}: Undoing a bulk deletion of appointments does not undo the entire bulk operation
+\item \textbf{Reported by}: Robin Bandzar
+\item \textbf{Date reported}: January 24 2018 10:55AM
+\item \textbf{Program (or component) name}: Undo Button on main toolbar
+\item \textbf{Configuration(s)}: 
+\begin{itemize}
+    \item \textbf{System Configuration}:
+    \begin{itemize}
+        \item {Operating System: Windows 10 Education 64-bit \\ (10.0, Build 15063) (15063.rs2\_release.170317-1834)}
+        \item {Language: English (Regional Setting: English)}
+        \item {System Manufacturer: Dell Inc., Precision Tower 3620}
+        \item {Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz (8 CPUs), 3.6GHz }
+        \item {Memory: 32768MB RAM}
+        \item {Java Version: 1.8.0\_131}
+    \end{itemize}
+    \item \textbf{Application Configuration}:
+    \begin{itemize}
+        \item {BORG Calendar Version 1.8.3 Default configuration}
+    \end{itemize}
+\end{itemize}
+
+\item \textbf{Report type}: Feature Enhancement
+\item \textbf{Reproducibility}: 100\%
+\item \textbf{Severity}: Low
+\item \textbf{Problem summary}: Selecting multiple appointments for a single day, opting to delete them in bulk and undoing the operation, the program only reverts the deletion of the most recent appointment on the queue. Multiple undo calls are needed to restore the appointments from the bulk action.
+\item \textbf{Problem description}: \\
+\underline{Steps to Reproduce}
+\begin{enumerate}
+\item Reproduction of enhancement can be done by either selecting a day with multiple appointments or creating multiple appointments on a single day. 
+\item Double-clicking on any of those appointments to get to the "appointments tab" and shift clicking to select multiple appointments listed on the righthand column. 
+\item Once multiple appointments are selected for deletion, click on the "Delete" button and the program will prompt you with a notification asking whether you would like to "Delete selected appointments(s)". 
+\item Select OK and move back into any calendar view which includes the day from which the appointments were deleted. 
+\item In the program main toolbar there is an option to undo your most recent action. When you click on it, the program only undos one of the bulk deleted appointments. If you were to delete 5 appointments at once then you would need to select undo 5 times to restore the calendar to it's previous state.
+\end{enumerate}
+\underline{Results:}
+\begin{itemize}
+\item \textbf{Expected Behaviour:} The entire appointment deletion action is undone when the Undo Button is pressed. Reverting the calendar to it's previous state.
+\item \textbf{Actual Behaviour:} Only a single appointment deletion is undone per Undo, requiring multiple presses to revert the calendar to it's previous state.
+\end{itemize}
+\item \textbf{New or old bug}: New
 \end{itemize}
 
 \newpage
@@ -98,6 +198,48 @@
 
 \subsection{Bug Reports in Mozilla Firefox}
 
+The Mozilla bug report, \url{https://bugzilla.mozilla.org/show_bug.cgi?id=112785}, describes a bug where \textbf{emails with multiple recipient viewed by Mozilla Mail shows the first recipient's name repeatedly for each of the recipients.}
+
+\smallskip
+
+As a reader external to this product, it was extremely difficult to understand the \textbf{actual} issue. The reporter did not do a great job describing the bug initially which caused multiple visits for the programmer to find the underlying issue.
+
+\bigskip
+
+\noindent Here is a list of problems with the initial bug report found in BugZilla:
+\begin{enumerate}
+\item The reporter did not specify \emph{the BuildID} of the component.
+\item The reporter did not specify an \emph{appropriate list of hardware and software configuration} under which the bug was found and replicated. Rather only the OS (x86 Windows ME) was specified.
+\item The reporter did not specify the \emph{type of the report}, e.g coding error, design issue, documentation mismatch, etc.
+\item The reporter did not specify a clear and concise \emph{1-line summary} of the problem. A simple 1-line summary could be: \textbf{Emails with multiple recipient viewed by Mozilla Mail shows the first recipient's name repeatedly for each of the recipients.}
+\item The reporter did not specify a concise \emph{step by step reproduction} description. The reproduction steps need to include more concise information such as the mailing application used to mail and any other steps taken in between the steps that might affect the bug result.
+\item The reporter did not specify if this is a new bug or an existing unfixed bug.
+\item The reporter did not explicitly mention what the \emph{Expected Result} of the action that causes this bug is supposed to be.
+\item The reporter themselves updated the resolution status when the Project Manager was supposed to update it. This is assuming the reporter is also not the project manager.
+\item No clear mention of who actually tested and verified the resolved version before closing the bug report.
+\end{enumerate}
+
+\newpage
 \subsection{Issue Reports in HBase}
+
+\begin{enumerate}
+\item There are 8614 issue reports that are of type \textbf{"bug"}.
+\item Among the bug issue reports, following is a quantitative analysis on their current states:
+\begin{itemize}
+\item There are 691 \textbf{"open"} bug reports (8.0\% of bug reports).
+\item There are 5138 \textbf{"closed"} bug reports (59.6\% of bug reports).
+\item There are 2615 \textbf{"resolved"} bug reports (30.4\% of bug reports).
+\item There are 7 \textbf{"in progress"} bug reports (0.08\% of bug reports).
+\item There are 27 \textbf{"reopened"} bug reports (0.3\% of bug reports).
+\item There are 136 \textbf{"patch available"} bug reports (1.6\% of bug reports).
+\end{itemize}
+\item Among the bug issue reports, which are either \textbf{"closed"} or \textbf{"resolved"}, following are the minimum, average, median and maximum bug resolution time:
+\begin{itemize}
+\item \textbf{Minimum} bug resolution time: 14 Seconds
+\item \textbf{Average} bug resolution time: 102 days, 23 Hrs, 40 Minutes, 50 Seconds
+\item \textbf{Median} bug resolution time: 3 days, 22 Hrs, 26 Minutes, 19 Seconds
+\item \textbf{Maximum} bug resolution time: 8 years, 48 days, 15 Hrs, 33 Minutes, 39 Seconds
+\end{itemize}
+\end{enumerate}
 
 \end{document}

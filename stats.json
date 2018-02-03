@@ -1,0 +1,39 @@
+{
+    "bugs": 8614,
+    "open": 691,
+    "closed": 5138,
+    "resolved": 2615,
+    "in-progress": 7,
+    "reopened": 27,
+    "patch-available": 136,
+    "resolution-time" : {
+        "min": {
+            "years": 0,
+            "days": 0,
+            "hours": 0,
+            "minutes": 0,
+            "seconds": 14
+        },
+        "max": {
+            "years": 8,
+            "days": 48,
+            "hours": 15,
+            "minutes": 33,
+            "seconds": 39
+        },
+        "avg": {
+            "years": 0,
+            "days": 102,
+            "hours": 23,
+            "minutes": 40,
+            "seconds": 50
+        },
+        "median": {
+            "years": 0,
+            "days": 3,
+            "hours": 22,
+            "minutes": 26,
+            "seconds": 19
+        }
+    }
+}
